@@ -1,0 +1,280 @@
+.posts-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.post {
+  width: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.post-user-avatar{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.post-image{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.post-body{
+  padding: 20px;
+}
+
+.post-content{
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+.post-actions{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.post-action{
+  margin-left: 20px;
+  color: #1b95e0;
+  cursor: pointer;
+}
+
+.post-comments{
+  margin-top: 20px;
+}
+.post-comment{
+  display: flex;
+  margin-top: 20px;
+}
+
+.post-comment-avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.post-comment-body{
+  display: flex;
+  flex-direction: column;
+}
+
+.post-comment-username{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post-comment-content{
+  font-size: 1.1em;
+}
+.post-comment-form{
+  margin-top: 20px;
+}
+.post-comment-textarea{
+  width: 100%;
+  height: 100px;
+  resize: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.post-comment-submit{
+  background-color: #1b95e0;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+
+//
+//.post-form-container {
+//  width: 500px;
+//  background-color: #2f3136;
+//  border-radius: 10px;
+//  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+//
+//  .post-form-header {
+//    display: flex;
+//    align-items: center;
+//    padding: 15px;
+//    border-bottom: 1px solid #747f8d;
+//
+//    .post-form-avatar {
+//      width: 50px;
+//      height: 50px;
+//      border-radius: 25px;
+//      margin-right: 10px;
+//    }
+//
+//    .post-form-header-username {
+//      font-size: 20px;
+//      font-weight: bold;
+//      color: #dcddde;
+//    }
+//  }
+//
+//  .post-form-body {
+//    padding: 15px;
+//
+//    .post-form-textarea {
+//      width: 100%;
+//      height: 150px;
+//      border: none;
+//      border-radius: 10px;
+//      padding: 10px;
+//      font-size: 18px;
+//      resize: none;
+//      color: #dcddde;
+//      background-color: #36393f;
+//    }
+//  }
+//
+//  .post-form-footer {
+//    display: flex;
+//    justify-content: flex-end;
+//    align-items: center;
+//    padding: 15px;
+//    border-top: 1px solid #747f8d;
+//
+//    .post-form-image-input {
+//      display: none;
+//    }
+//
+//    .post-form-submit {
+//      background-color: #7289da;
+//      color: #fff;
+//      border: none;
+//      border-radius: 10px;
+//      padding: 10px 20px;
+//      font-size: 18px;
+//      font-weight: bold;
+//      cursor: pointer;
+//
+//      &:hover {
+//        background-color: #5f6f9c;
+//      }
+//    }
+//  }
+//}
+//
+
+
+// Variables
+$form-background-color: #ffffff;
+$form-text-color: #333;
+$form-border-color: #e6e6e6;
+$form-primary-color: #1DA1F2;
+
+// Form Container
+.post-form-container {
+  width: 500px;
+  background-color: $form-background-color;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+// Form Header
+.post-form-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+// Form Avatar
+.post-form-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.post-form-avatar-image {
+  width: 100%;
+}
+
+// Form Username
+.post-form-username {
+  font-weight: bold;
+  color: $form-text-color;
+}
+
+// Form Body
+.post-form-body {
+  position: relative;
+}
+
+// Form Textarea
+.post-form-textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid $form-border-color;
+  resize: none;
+  color: $form-text-color;
+}
+
+// Form Media
+.post-form-media {
+  position: relative;
+  margin-top: 20px;
+}
+
+// Form Media Input
+.post-form-media-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Form Media Preview
+.post-form-media-preview {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  border: 1px solid $form-border-color;
+  margin-top: 20px;
+}
+
+// Form Footer
+.post-form-footer {
+  margin-top: 20px;
+  text-align: right;
+}
+
+// Form Submit
+.post-form-submit {
+  padding: 10px 20px;
+  background-color: #36393f;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+

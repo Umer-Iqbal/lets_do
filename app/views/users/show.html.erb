@@ -1,0 +1,23 @@
+<div class="user-container">
+  <div class="user-header">
+    <%#= image_tag @user.avatar, class: "user-avatar" %>
+    <%= image_tag "avatarplaceholder.jpg", class: "user-avatar" %>
+    <div class="user-header-info">
+      <div class="user-username">
+        <%= @user.username %>
+      </div>
+      <div class="user-bio">
+        <%= @user.bio %>
+      </div>
+    </div>
+  </div>
+  <div class="user-posts">
+    <h3 class="user-posts-title">Recent Posts</h3>
+    <% @posts.each do |post| %>
+      <div class="user-post w-unset h-unset">
+        <%#= image_tag post.picture, class: "user-post-image" %>
+        <%= image_tag "daku.jpg", class: "user-post-image" %>
+      </div>
+    <% end %>
+  </div>
+</div>

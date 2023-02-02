@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MixTg</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+
+  <body data-controller="main">
+
+    <header class="header-container top-header">
+      <div class="header-left">
+          <%= image_tag 'logo1.png', alt:"Logo", class:"header-logo" %>
+          <h1 class="header-title">Mix TG</h1>
+      </div>
+      <nav class="header-right">
+        <%= link_to 'Home', root_path, class:"header-nav-item" %>
+        <%= link_to 'Profile', user_path(User.first), class:"header-nav-item" %>
+        <%= link_to 'Post', new_post_path, class:"header-nav-item", data: { "turbo_stream": true } %>
+        <a href="#" class="header-nav-item">Notifications</a>
+      </nav>
+    </header>
+
+    <div id='postWrapper' class="position-absolute w-100 create-wrapper">
+    </div>
+
+
+    <%= yield %>
+  </body>
+</html>

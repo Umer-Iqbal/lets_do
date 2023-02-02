@@ -1,0 +1,26 @@
+.w-unset {
+  width: unset !important;
+}
+
+.h-unset {
+  height: unset !important;
+}
+
+a {
+  text-decoration: unset;
+  color: #1a1e21;
+}
+
+.top-header {
+  top: 0;
+  position: sticky !important;
+}
+
+.create-wrapper {
+  top: 80px;
+  position: sticky !important;
+}
+
+.w-60 {
+  width: 60%;
+}

@@ -1,0 +1,52 @@
+<!--<div class="post-form-container">-->
+<%#= form_for @post, html: { class: "post-form" }, data: {turbo: false} do |f| %>
+<!--    <div class="post-form-header">-->
+<%#= image_tag current_user.avatar, class: "post-form-avatar" %>
+<%#= image_tag "avatarplaceholder.jpg", class: "post-form-avatar" %>
+<!--      <div class="post-form-header-username">-->
+<%#= current_user.username %>
+<%#= User.first.username %>
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="post-form-body">-->
+<%#= f.text_area :body, class: "post-form-textarea", placeholder: "What's on your mind?" %>
+<!--    </div>-->
+<!--    <div class="post-form-footer">-->
+<%#= f.file_field :picture, class: "post-form-image-input" %>
+<%#= f.submit "Post", class: "post-form-submit" %>
+<!--    </div>-->
+<%# end %>
+<!--</div>-->
+
+<%= turbo_stream.update("postWrapper") do%>
+<div class="user-container" data-controller="show-create">
+  <div class="w-60 rounded-3 bg-light px-5 py-3">
+    <%= form_with(model: @post, local: true) do |form| %>
+      <div class="post-form">
+        <div class="post-form-header">
+          <div class="post-form-avatar">
+            <%= image_tag "avatarplaceholder.jpg", class: "post-form-avatar-image" %>
+
+            <%#= image_tag(current_user.avatar, class: "post-form-avatar-image") %>
+          </div>
+          <div class="post-form-username">
+            <%= User.first.username %>
+          </div>
+        </div>
+        <div class="post-form-body">
+          <%= form.text_area :body, placeholder: "What's happening?", class: "post-form-textarea" %>
+          <div class="post-form-media">
+            <%= form.file_field :media, accept: "image/*, video/*", class: "post-form-media-input" %>
+            <div class="post-form-media-preview">
+            </div>
+          </div>
+        </div>
+        <div class="post-form-footer">
+          <button type="button" class="post-form-submit text-bg-info bg-light border" data-action="click->main#closeCreate"> Cancel </button>
+          <%= form.submit "Post", class: "post-form-submit" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
