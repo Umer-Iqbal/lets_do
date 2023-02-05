@@ -10,17 +10,13 @@ class PostsController < ApplicationController
   end
 
   def new
-    # @post = current_user.posts.build
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    # @post = current_user.posts.build(post_params.merge(user_id: 1))
-    @post = User.first.posts.build(post_params)
-
+    @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to root_path
-      # redirect_to @post, notice: 'Post was successfully created.'
+      redirect_to root_path, notice: 'Post was successfully created.'
     else
       render :new
     end
@@ -31,7 +27,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, notice: 'Post was successfully updated.'
+      redirect_to root_path, notice: 'Post was successfully updated.'
     else
       render :edit
     end
@@ -54,6 +50,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:body, :picture)
+    params.require(:post).permit(:body, images: [])
   end
 end

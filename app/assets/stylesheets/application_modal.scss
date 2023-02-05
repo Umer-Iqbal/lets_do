@@ -1,0 +1,22 @@
+.right-modal-wrapper {
+  width: 447px;
+  border: 1px solid gainsboro;
+  height: calc(100vh - 71px);
+  position: absolute;
+  right: 0;
+  top: 0px;
+  border-radius: 7px;
+  overflow: auto;
+  background-color: white;
+}
+
+.left-modal-wrapper {
+  width: 447px;
+  border: 1px solid gainsboro;
+  height: calc(100vh - 71px);
+  position: absolute;
+  left: 0;
+  top: 0px;
+  border-radius: 7px;
+  overflow: auto;
+}

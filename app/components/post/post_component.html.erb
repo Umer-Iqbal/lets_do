@@ -1,0 +1,73 @@
+<div class="posts-container">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-header">
+        <span>
+          <%= image_tag post.user.avatar.attached? ? post.user.avatar : "avatarplaceholder.jpg", class: "post-user-avatar" %>
+          <%= link_to post.user.username.present? ? post.user.username : "User", post.user %>
+        </span>
+
+        <span>
+          <span href="#" id="postMenue" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag "icons/menue.png" %>
+          </span>
+          <ul class="dropdown-menu dropdown-menu-dark mt-2" aria-labelledby="postMenue">
+            <li><a class="dropdown-item" href="#">Hide</a></li>
+            <li><%= link_to 'Edit', edit_post_path(post), class: "dropdown-item", data: { "turbo_stream": true } %></li>
+            <li><%= link_to 'Delete', post_path(post), class: "dropdown-item", data: { turbo_method: :delete } %></li>
+          </ul>
+
+        </span>
+      </div>
+      <% if post.images.attached? %>
+        <div class="post-image-wrapper">
+          <% post.images.each do |image| %>
+            <%= image_tag image, class: "post-image mb-3" %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="post-body">
+        <div class="post-content">
+          <p><%= post.body %></p>
+        </div>
+        <div class="post-actions">
+          <%= link_to "Like", like_post_path(post), class: "post-action bi-hand-thumbs-up" %>
+
+          <%= link_to "Comment", post_comments_path(post), class: "post-action text-black-50", data: { "turbo_stream": true } %>
+          <% if post.comments.present? %>
+            <span class="bi-lightning ml-6 text-black-50">
+              <%= post.comments.count if post.comments.present? %>
+            </span>
+          <% end %>
+
+          <%= link_to "Share", "#", class: "post-action" %>
+        </div>
+        <!--        <div class="post-comments">-->
+        <%# post.comments.each do |comment| %>
+        <!--            <div class="post-comment">-->
+        <%#= image_tag comment.user.avatar.attached? ? comment.user.avatar : "avatarplaceholder.jpg", class: "post-comment-avatar" %>
+
+        <%#= image_tag comment.user.avatar, class: "post-comment-avatar" %>
+        <!--              <div class="post-comment-body">-->
+        <!--                <div class="post-comment-username">-->
+        <%#= link_to comment.user.username, comment.user %>
+        <!--                </div>-->
+        <!--                <div class="post-comment-content">-->
+        <!--                  <p><%#= comment.body %></p>-->
+        <!--                </div>-->
+        <!--              </div>-->
+        <!--            </div>-->
+        <%# end %>
+        <!--        </div>-->
+        <!--        <div class="post-comment-form">-->
+        <%#= form_with model: [post, Comment.new], local: true do |form| %>
+        <%#= form.text_area :content, class: "post-comment-textarea" %>
+        <%#= form.submit "Post Comment", class: "post-comment-submit" %>
+        <%# end %>
+        <!--        </div>-->
+      </div>
+    </div>
+  <% end %>
+</div>
+

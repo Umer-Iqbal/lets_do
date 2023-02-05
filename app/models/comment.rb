@@ -3,4 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   validates :body, presence: true
+  validates :post, presence: true
+  validates :user, presence: true
 end

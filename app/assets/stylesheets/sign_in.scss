@@ -1,0 +1,108 @@
+//.sign-in-container {
+//  width: 400px;
+//  margin: 0 auto;
+//  padding: 30px;
+//  border: 1px solid #ccc;
+//  border-radius: 10px;
+//  box-shadow: 2px 2px 10px #ccc;
+//  text-align: center;
+//
+//  .sign-in-header {
+//    margin-bottom: 30px;
+//
+//    h2 {
+//      font-size: 36px;
+//      font-weight: bold;
+//      margin-bottom: 20px;
+//    }
+//  }
+//
+//  .sign-in-form {
+//    .form-group {
+//      margin-bottom: 20px;
+//
+//      label {
+//        font-weight: bold;
+//        margin-bottom: 10px;
+//        display: block;
+//      }
+//
+//      .form-control {
+//        padding: 10px;
+//        border-radius: 5px;
+//        border: 1px solid #ccc;
+//        width: 100%;
+//      }
+//
+//      .btn-primary {
+//        background-color: #337ab7;
+//        color: #fff;
+//        padding: 10px 20px;
+//        border-radius: 5px;
+//        border: none;
+//        font-weight: bold;
+//        cursor: pointer;
+//      }
+//
+//      .remember-me {
+//        font-weight: normal;
+//        font-size: 14px;
+//        margin-bottom: 20px;
+//
+//        input[type="checkbox"] {
+//          margin-right: 10px;
+//        }
+//      }
+//    }
+//  }
+//}
+
+
+.sign-in-container {
+  margin: 5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .sign-in-form {
+    width: 500px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+
+    .sign-in-form-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sign-in-form-field {
+      margin-bottom: 20px;
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      .sign-in-form-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    }
+
+    .sign-in-form-actions {
+      text-align: right;
+
+      .sign-in-form-submit {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,20 +1,15 @@
 import {Controller} from "@hotwired/stimulus"
+import GlobalController from "./global_controller";
 
 // Connects to data-controller="main"
-export default class extends Controller {
+export default class extends GlobalController {
 
   static get targets() {
     return ["close"]
   }
 
   closeCreate() {
-    this.global.closePostWrapper()
+    this.closePostWrapper()
   }
 
-
-  get global() {
-    return this.application.controllers.find(controller => {
-      return controller.context.identifier === 'global'
-    })
-  }
 }

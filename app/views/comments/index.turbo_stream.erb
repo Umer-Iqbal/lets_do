@@ -1,0 +1,21 @@
+<%= turbo_stream.update('flashMessage') do %>
+  <%= render "shares/flash_message" %>
+<% end %>
+
+<%= turbo_stream.update("rightModal") do %>
+  <div data-controller="show" data-show-target="rightModal">
+    <div class="d-flex justify-content-between p-3 mb-4 comment-top">
+      <span>Comments</span>
+      <%= image_tag('icons/cross.svg', class: "cursor-pointer" , "data-action": "click->show#closeRightModal") %>
+    </div>
+
+    <div class="p-3 mb-4">
+      <%= form_with model: Comment, url: post_comments_path(@post) do |f| %>
+        <%= f.text_area :body, placeholder: "Write you comment", class: "comment-area" %>
+      <%= f.submit "post" %>
+      <% end %>
+    </div>
+      <%= render Comment::CommentComponent.with_collection(@comments, current_user: current_user) %>
+  </div>
+<% end %>
+
