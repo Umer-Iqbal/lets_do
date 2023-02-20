@@ -1,0 +1,33 @@
+<turbo-frame id="commentForm">
+
+
+
+  <div class="comment">
+    <div class="comment-header">
+      <div class="comment-avatar image-wrapper">
+        <%= image_tag @comment.user.avatar.attached? ? @comment.user.avatar : "avatarplaceholder.jpg", class: "comment-avatar-image w-100" %>
+
+        <%#= image_tag(@comment.user.avatar, class: "comment-avatar-image") %>
+      </div>
+      <div class="comment-username">
+        <%= @comment.user.username %>
+      </div>
+    </div>
+    <div class="comment-body">
+      <%= @comment.body %>
+    </div>
+    <div class="comment-footer">
+      <%= link_to "Like", "#", class: "comment-like bi-hand-thumbs-up" %>
+      <%= link_to "Dislike", "#", class: "comment-dislike bi-hand-thumbs-down" %>
+      <% if @current_user == @comment.user %>
+        <%= link_to "Edit", edit_post_comment_path(post_id: @comment.post.id, id: @comment.id), class: "comment-edit bi-pencil" %>
+      <% end %>
+      <%#= link_to "Like", like_comment_path(comment), method: :post, class: "comment-like" %>
+      <%#= link_to "Dislike", dislike_comment_path(comment), method: :post, class: "comment-dislike" %>
+      <%# if current_user == comment.user %>
+      <%#= link_to "Edit", edit_comment_path(comment), class: "comment-edit" %>
+      <%# end %>
+    </div>
+  </div>
+</turbo-frame>
+

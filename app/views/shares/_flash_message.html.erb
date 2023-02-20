@@ -1,0 +1,7 @@
+<% flash.each do |key, value| %>
+  <div class="d-flex justify-content-center">
+    <span class="flash-message <%= key == "notice" ? 'flash-success' : 'flash-error' %>" data-controller="flash">
+        <%= value %>
+    </span>
+  </div>
+<% end %>

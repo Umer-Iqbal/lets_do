@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
+
 import GlobalController from "./global_controller"
 application.register("global", GlobalController)
 
@@ -13,5 +16,8 @@ application.register("hello", HelloController)
 import MainController from "./main_controller"
 application.register("main", MainController)
 
-import ShowCreateController from "./show_create_controller"
-application.register("show-create", ShowCreateController)
+import PostController from "./post_controller"
+application.register("post", PostController)
+
+import ShowController from "./show_controller"
+application.register("show", ShowController)

@@ -8,7 +8,20 @@ export default class extends Controller {
   }
 
   closePostWrapper() {
-    let parentWrapper = document.getElementById('postWrapper')
+    this.closeModal('postWrapper')
+
+  }
+
+  showRightWrapper() {
+    document.getElementById('rightModal').classList.remove('d-none')
+  }
+
+  closeRightWrapper() {
+    this.closeModal('rightModal')
+  }
+
+  closeModal(modalId) {
+    let parentWrapper = document.getElementById(modalId)
     parentWrapper.innerHTML = ''
     parentWrapper.classList.add('d-none')
   }
