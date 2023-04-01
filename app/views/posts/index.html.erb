@@ -1,1 +1,12 @@
-<%= render Post::PostComponent.new(posts: @posts)%>
+<%#= render Post::PostComponent.new(posts: @posts)%>
+<!--<ul id="posts_list" data-turbo-stream-target="posts_list">-->
+  <%#= render @posts %>
+<!--</ul>-->
+
+
+
+  <%= turbo_stream_from "post_channel" %>
+  <%= turbo_frame_tag "post_channel" do %>
+    <%= render @posts %>
+  <% end %>
+

@@ -4,6 +4,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order("created_at DESC")
+    # respond_to do |format|
+    #   format.html # Render the index.html.erb template
+    #   format.turbo_stream # Render the Turbo Streams template
+    # end
   end
 
   def show
@@ -13,14 +17,21 @@ class PostsController < ApplicationController
     @post = current_user.posts.build
   end
 
+
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to root_path, notice: 'Post was successfully created.'
+      # render turbo_stream: turbo_stream.append(:posts_list, partial: "posts/post", locals: { post: @post })
+      # render turbo_stream: turbo_stream.append(:posts_list, partial: "posts/post", locals: { post: @post })
+
+      head 200
+      # redirect_to root_path, notice: 'Post was successfully created.'
     else
-      render :new
+      render :new, flash.now[:notice] = "Message n sent"
     end
   end
+
+
 
   def edit
   end
