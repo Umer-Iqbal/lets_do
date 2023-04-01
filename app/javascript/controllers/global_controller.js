@@ -9,7 +9,6 @@ export default class extends Controller {
 
   closePostWrapper() {
     this.closeModal('postWrapper')
-
   }
 
   showRightWrapper() {

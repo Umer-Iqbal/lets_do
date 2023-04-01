@@ -1,4 +1,4 @@
-<turbo-frame id="commentForm">
+<turbo-frame id=<%= dom_id(@comment) %>>
 <%= form_with model: @comment, url: post_comment_path(@post), class: "m-3" do |f| %>
   <%= f.text_area :body, placeholder: "Write you comment", class: "comment-area" %>
   <%= f.submit "post" %>

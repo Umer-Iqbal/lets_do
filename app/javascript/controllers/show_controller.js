@@ -6,7 +6,7 @@ export default class extends GlobalController {
   static targets = ['rightModal', 'postModal']
   connect() {
     if (this.hasRightModalTarget){ this.showRightWrapper() }
-    if (this.hasPostModal) { this.showPostWrapper() }
+    if (this.hasPostModalTarget) { this.showPostWrapper() }
   }
 
   closeRightModal() {

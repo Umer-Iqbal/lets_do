@@ -5,8 +5,9 @@
 
 
 
-  <%= turbo_stream_from "post_channel" %>
-  <%= turbo_frame_tag "post_channel" do %>
-    <%= render @posts %>
-  <% end %>
+<%= turbo_stream_from :posts_list %>
+<div id='all_posts'>
+  <%= render @posts %>
+</div>
+
 

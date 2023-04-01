@@ -21,9 +21,6 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      # render turbo_stream: turbo_stream.append(:posts_list, partial: "posts/post", locals: { post: @post })
-      # render turbo_stream: turbo_stream.append(:posts_list, partial: "posts/post", locals: { post: @post })
-
       head 200
       # redirect_to root_path, notice: 'Post was successfully created.'
     else
@@ -31,22 +28,22 @@ class PostsController < ApplicationController
     end
   end
 
-
-
   def edit
   end
 
   def update
+
     if @post.update(post_params)
-      redirect_to root_path, notice: 'Post was successfully updated.'
+      head 200
+      # redirect_to root_path, notice: 'Post was successfully updated.'
     else
       render :edit
     end
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    head 200 if @post.destroy
+    # redirect_to posts_url, notice: 'Post was successfully destroyed.'
   end
 
   def like

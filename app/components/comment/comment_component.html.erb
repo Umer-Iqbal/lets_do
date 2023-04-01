@@ -1,7 +1,4 @@
-<turbo-frame id="commentForm">
-
-
-
+<turbo-frame id=<%= dom_id(@comment) %>>
   <div class="comment">
     <div class="comment-header">
       <div class="comment-avatar image-wrapper">
@@ -17,11 +14,14 @@
       <%= @comment.body %>
     </div>
     <div class="comment-footer">
-      <%= link_to "Like", "#", class: "comment-like bi-hand-thumbs-up" %>
-      <%= link_to "Dislike", "#", class: "comment-dislike bi-hand-thumbs-down" %>
       <% if @current_user == @comment.user %>
         <%= link_to "Edit", edit_post_comment_path(post_id: @comment.post.id, id: @comment.id), class: "comment-edit bi-pencil" %>
+        <%= link_to "Delete", post_comment_path(post_id: @comment.post.id, id: @comment.id), class: "comment-edit bi-trash3", data: { turbo_method: :delete } %>
+      <% else %>
+        <%= link_to "Like", "#", class: "comment-like bi-hand-thumbs-up" %>
+        <%= link_to "Dislike", "#", class: "comment-dislike bi-hand-thumbs-down" %>
       <% end %>
+
       <%#= link_to "Like", like_comment_path(comment), method: :post, class: "comment-like" %>
       <%#= link_to "Dislike", dislike_comment_path(comment), method: :post, class: "comment-dislike" %>
       <%# if current_user == comment.user %>

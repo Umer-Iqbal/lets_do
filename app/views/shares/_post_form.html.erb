@@ -1,5 +1,5 @@
 <div class="user-container" data-controller="show" data-show-target="postModal">
-  <div class="w-60 rounded-3 bg-light px-5 py-3">
+  <div class="w-50 rounded-3 bg-light px-5 py-3">
     <%= form_with(model: post, local: true) do |form| %>
       <div class="post-form" data-controller="post">
         <div class="post-form-header">
@@ -29,7 +29,6 @@
               </button>
             <%= form.submit "Post", class: "post-form-submit" %>
             </span>
-
         </div>
       </div>
     <% end %>

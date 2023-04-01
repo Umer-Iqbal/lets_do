@@ -1,12 +1,12 @@
-<div class="posts-container">
-    <div class="post">
-      <div class="post-header">
+<div class="posts-container" id=<%= dom_id(post) %>>
+  <div class="post">
+    <div class="post-header">
         <span>
           <%= image_tag post.user.avatar.attached? ? post.user.avatar : "avatarplaceholder.jpg", class: "post-user-avatar" %>
           <%= link_to post.user.username.present? ? post.user.username : "User", post.user %>
         </span>
 
-        <span>
+      <span>
           <span href="#" id="postMenue" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= image_tag "icons/menue.png" %>
           </span>
@@ -17,32 +17,32 @@
           </ul>
 
         </span>
+    </div>
+    <% if post.images.attached? %>
+      <div class="post-image-wrapper">
+        <% post.images.each do |image| %>
+          <%= image_tag image, class: "post-image mb-3" %>
+        <% end %>
       </div>
-      <% if post.images.attached? %>
-        <div class="post-image-wrapper">
-          <% post.images.each do |image| %>
-            <%= image_tag image, class: "post-image mb-3" %>
-          <% end %>
-        </div>
-      <% end %>
+    <% end %>
 
-      <div class="post-body">
-        <div class="post-content">
-          <p><%= post.body %></p>
-        </div>
-        <div class="post-actions">
-          <%= link_to "Like", like_post_path(post), class: "post-action bi-hand-thumbs-up" %>
+    <div class="post-body">
+      <div class="post-content">
+        <p><%= post.body %></p>
+      </div>
+      <div class="post-actions">
+        <%= link_to "Like", like_post_path(post), class: "post-action bi-hand-thumbs-up" %>
 
-          <%= link_to "Comment", post_comments_path(post), class: "post-action text-black-50", data: { "turbo_stream": true } %>
-          <% if post.comments.present? %>
-            <span class="bi-lightning ml-6 text-black-50">
-              <%= post.comments.count if post.comments.present? %>
-            </span>
-          <% end %>
+        <%= link_to "Comment", post_comments_path(post), class: "post-action text-black-50", data: { "turbo_stream": true } %>
 
-          <%= link_to "Share", "#", class: "post-action" %>
-        </div>
+        <span class="ml-6 text-black-50" id="<%= dom_id(post) %>_comments_count">
+          <%= post.comments.count if post.comments.present? %>
+        </span>
+
+
+        <%= link_to "Share", "#", class: "post-action" %>
       </div>
     </div>
+  </div>
 </div>
 
