@@ -17,7 +17,7 @@
             <%= link_to 'Home', root_path, class: "dropdown-item" %>
           </li>
           <li>
-            <%= link_to 'Profile', user_path(User.first), class: "dropdown-item" %>
+            <%= link_to 'Profile', user_path(current_user), class: "dropdown-item" %>
           </li>
           <li>
             <%= link_to 'Post', new_post_path, class: "dropdown-item", data: { "turbo_stream": true } %>
