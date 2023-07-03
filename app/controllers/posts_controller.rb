@@ -20,11 +20,15 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      flash.now[:notice] = "Post created successfully"
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.update(:posts_count, html: Post.count),
-            turbo_stream.prepend('all_posts', partial: 'posts/post', locals: { post: @post })
+            # turbo_stream.update(:posts_count, html: "x #{@post.id}"),
+            # turbo_stream.update(:posts_count, html: Post.count),
+            turbo_stream.prepend('all_posts', partial: 'posts/post', locals: { post: @post }),
+            turbo_stream.update('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' })
+
           ]
         end
       end
