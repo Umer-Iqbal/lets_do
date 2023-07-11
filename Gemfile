@@ -67,3 +67,5 @@ end
 gem 'devise'
 gem 'view_component'
 
+gem 'stimulus_reflex'
+
