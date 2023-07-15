@@ -67,3 +67,5 @@ end
 gem 'devise'
 gem 'view_component'
 
+
+gem "polaris_view_components", "~> 0.13.6"
