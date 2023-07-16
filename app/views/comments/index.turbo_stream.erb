@@ -14,7 +14,8 @@
     <div class="p-3 mb-4">
       <%= form_with model: Comment, url: post_comments_path(@post) do |f| %>
         <%= f.text_area :body, placeholder: "Write you comment", class: "comment-area" %>
-        <%= f.submit "post" %>
+        <%= polaris_button(size: :slim) {f.submit "Add comment" } %>
+        <%#= f.submit "post" %>
       <% end %>
     </div>
     <div id='all_comments'>

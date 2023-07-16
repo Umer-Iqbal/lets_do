@@ -1,0 +1,46 @@
+<%= form_with(model: post, local: true,) do |form| %>
+  <div class="post-form-wrapper" data-controller="post">
+    <%= polaris_modal(
+          id: "demo-modal",
+          title: false,
+          open: true,
+          ) do |modal| %>
+      <% modal.with_section do %>
+        <div class="w-100 rounded-3 px-5 py-3">
+          <div class="post-form">
+            <div class="post-form-header">
+              <div class="post-form-avatar">
+                <%= image_tag(current_user.avatar.attached? ? current_user.avatar : "avatarplaceholder.jpg", class: "post-form-avatar-image") %>
+              </div>
+              <div class="post-form-username">
+                <%= User.first.username %>
+              </div>
+            </div>
+            <div class="post-form-body">
+              <%= form.text_area :body, placeholder: "What's happening?", class: "post-form-textarea" %>
+              <div class="post-form-media d-none" data-post-target="uploadArea">
+                <%= form.file_field :images, accept: "image/*, video/*", class: "post-form-media-input", multiple: true %>
+                <div class="post-form-media-preview d-flex justify-content-center align-items-center">
+                  <span>Click or drag and drop here</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% modal.with_section(class: "footer-section") do %>
+        <div class="post-form-footer">
+          <button type="button" class="post-form-submit text-bg-info bg-light border" data-action="click->post#showUpload">
+            upload
+          </button>
+          <span>
+          <button type="button" class="post-form-submit text-bg-info bg-light border" data-action="polaris-modal#close">
+            Cancel
+          </button>
+            <%= form.submit "Post", class: "post-form-submit", "data-action": "polaris-modal#close" %>
+        </span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
