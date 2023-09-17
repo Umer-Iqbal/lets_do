@@ -14,8 +14,8 @@
   height: max-content;
 
   .post-image-wrapper {
-    height: 26rem;
-    overflow: auto;
+    max-height: 400px;
+    overflow: hidden;
   }
 }
 
@@ -36,7 +36,6 @@
 
 .post-image{
   width: 100%;
-  height: 400px;
   object-fit: cover;
 }
 
