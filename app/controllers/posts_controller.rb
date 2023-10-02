@@ -17,12 +17,19 @@ class PostsController < ApplicationController
     @post = current_user.posts.build
   end
 
-
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      head 200
-      # redirect_to root_path, notice: 'Post was successfully created.'
+      flash.now[:notice] = "Post created successfully"
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: [
+            turbo_stream.prepend('all_posts', partial: 'posts/post', locals: { post: @post }),
+            turbo_stream.update('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' })
+
+          ]
+        end
+      end
     else
       render :new, flash.now[:notice] = "Message n sent"
     end
@@ -34,8 +41,11 @@ class PostsController < ApplicationController
   def update
 
     if @post.update(post_params)
-      head 200
-      # redirect_to root_path, notice: 'Post was successfully updated.'
+      respond_to do |format|
+        format.turbo_stream {
+          render turbo_stream: [turbo_stream.replace('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' }),
+                                                    turbo_stream.replace("post_#{@post.id}", partial: 'posts/post', locals: { post: @post })] }
+      end
     else
       render :edit
     end
@@ -52,7 +62,6 @@ class PostsController < ApplicationController
   end
 
   private
-
   def set_post
     @post = Post.find(params[:id])
   end
