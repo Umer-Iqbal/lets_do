@@ -24,8 +24,6 @@ class PostsController < ApplicationController
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
-            # turbo_stream.update(:posts_count, html: "x #{@post.id}"),
-            # turbo_stream.update(:posts_count, html: Post.count),
             turbo_stream.prepend('all_posts', partial: 'posts/post', locals: { post: @post }),
             turbo_stream.update('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' })
 
@@ -43,8 +41,11 @@ class PostsController < ApplicationController
   def update
 
     if @post.update(post_params)
-      head 200
-      # redirect_to root_path, notice: 'Post was successfully updated.'
+      respond_to do |format|
+        format.turbo_stream {
+          render turbo_stream: [turbo_stream.replace('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' }),
+                                                    turbo_stream.replace("post_#{@post.id}", partial: 'posts/post', locals: { post: @post })] }
+      end
     else
       render :edit
     end
@@ -61,12 +62,6 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def update_jj
-    render turbo_stream: turbo_stream.prepend(:posts_count, html: Post.count)
-    # Turbo::StreamsChannel.broadcast_update_to :posts_list, target: 'comments_count', partial: 'posts/count', locals: { count: Post.count }
-  end
-
   def set_post
     @post = Post.find(params[:id])
   end

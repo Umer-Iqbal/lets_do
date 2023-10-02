@@ -1,4 +1,4 @@
-<div class="posts-container" id="post_jj_<%= post.id %>">
+<div class="posts-container" id="post_<%= post.id %>">
   <div class="post">
     <div class="post-header">
         <span>
@@ -20,8 +20,18 @@
     </div>
     <% if post.images.attached? %>
       <div class="post-image-wrapper">
-        <% post.images.each do |image| %>
-          <%= image_tag image, class: "post-image mb-3" %>
+        <% if post.images.count > 1 %>
+          <div class="d-flex">
+            <% post.images.each_with_index do |image, index| %>
+              <% if index <= 1 %>
+                <span class="px-1 col-6">
+                  <%= image_tag image, class: "post-image mb-3" %>
+                </span>
+              <% end %>
+            <% end %>
+          </div>
+        <% else %>
+          <%= image_tag post.images.first, class: "post-image mb-3" %>
         <% end %>
       </div>
     <% end %>

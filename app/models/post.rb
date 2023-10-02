@@ -13,6 +13,6 @@ class Post < ApplicationRecord
     #   broadcast_prepend_later_to :posts_list, target: 'all_posts', partial: 'posts/post', locals: { post: self }     #faster but may be little delay for some user
     # end
 
-    after_update_commit {broadcast_replace_later_to :posts_list, target: self, partial: 'posts/post', locals: { post: self } }
+    # after_update_commit {broadcast_replace_later_to :posts_list, target: self, partial: 'posts/post', locals: { post: self } }
     after_destroy_commit {broadcast_remove_to :posts_list, target: self }  #dont add later init
 end
