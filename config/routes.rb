@@ -11,5 +11,9 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :users
+  resources :users do
+    member do
+      post :profile_images_edit
+    end
+  end
 end

@@ -21,3 +21,6 @@ application.register("post", PostController)
 
 import ShowController from "./show_controller"
 application.register("show", ShowController)
+
+import { registerPolarisControllers } from "polaris-view-components"
+registerPolarisControllers(Stimulus)

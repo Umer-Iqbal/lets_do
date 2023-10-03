@@ -8,6 +8,7 @@
   <%= favicon_link_tag 'logo.png' %>
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <%= stylesheet_link_tag "polaris_view_components" %>
 </head>
 
 
@@ -21,6 +22,7 @@
   <div class="position-relative">
     <div id="rightModal" class="right-modal-wrapper d-none"></div>
     <div id="leftModal" class="left-modal-wrapper d-none"></div>
+    <div id="middleModal"></div>
   </div>
 </div>
 
