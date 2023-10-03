@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :profile_images_edit]
 
   def index
     @users = User.all
@@ -39,6 +39,10 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
+  def profile_images_edit
+    render turbo_stream: turbo_stream.append('middleModal', partial: 'users/profile_images_form', locals: { user: @user })
+  end
+
   private
 
   def set_user
@@ -46,7 +50,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :avatar)
+    params.require(:user).permit(:username, :email, :password, :avatar, :wallpaper)
   end
 
 end
