@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
+      flash.now[:notice] = "comment created successfully"
       update_posts_count
       Turbo::StreamsChannel.broadcast_prepend_later_to(:comments_list, target: 'all_comments',
                                    html: ApplicationController.render(Comment::CommentComponent.new(comment: @comment, current_user: current_user), layout: false))

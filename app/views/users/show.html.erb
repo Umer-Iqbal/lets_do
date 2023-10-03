@@ -1,18 +1,32 @@
 <div class="user-container">
   <div class="user-posts">
-    <div class="wall-paper overflow-hidden">
-      <%= image_tag "daku.jpg", class: "user-post-image w-100" %>
-    </div>
-    <div class="user-header mt--50">
-      <%= image_tag @user.avatar.attached? ? @user.avatar : "avatarplaceholder.jpg", class: "user-avatar" %>
-      <div class="user-header-info">
-        <div class="user-username">
-          <%= @user.username.present? ? @user.username : "User" %>
-        </div>
-        <div class="user-bio">
-          <%= @user.bio %>
-        </div>
+    <div class="wallpaper-wrapper">
+      <div class="wall-paper overflow-hidden">
+        <%= image_tag current_user.wallpaper.attached? ? current_user.wallpaper : "daku.jpg", class: "user-post-image w-100" %>
       </div>
+    </div>
+    <div class="user-header">
+
+      <div class="wallpaper-user-image-wrapper">
+        <div>
+           <span class="profile-user-image-wrapper">
+              <%= image_tag @user.avatar.attached? ? @user.avatar : "avatarplaceholder.jpg", class: "user-avatar" %>
+           </span>
+
+          <div class="user-header-info">
+            <div class="user-username">
+              <%= @user.username.present? ? @user.username : "User" %>
+            </div>
+            <div class="user-bio">
+              <%= @user.bio %>
+            </div>
+          </div>
+        </div>
+        <span class= "edit-profile-images">
+         <%= link_to 'edit', profile_images_edit_user_path(@user), "data-turbo-method": "post"%>
+        </span>
+      </div>
+
     </div>
   </div>
   <div class="user-posts">
