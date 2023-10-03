@@ -292,6 +292,7 @@ polaris-view-components@^1.2.0:
   integrity sha512-czy45FppGpVRdfbASQ7YIbt9Y6yUITL2K30JuPdvrzSzqsNidUQq/VC59MQk7EybOlefOvHjEtE7QhTddjiT2w==
   dependencies:
     "@hotwired/stimulus" "^3.2.2"
+
     "@rails/request.js" "^0.0.8"
 
 readdirp@~3.6.0:

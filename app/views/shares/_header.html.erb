@@ -21,6 +21,8 @@
             <%= link_to 'Profile', user_path(current_user), class: "dropdown-item" %>
           </li>
           <li>
+<!--            <%#= polaris_link(url: new_post_path, data: { controller: "polaris", target: "#demo-modal", action: "polaris#openModal", "turbo_stream": true }) do %> Post <%# end %>-->
+
             <%= link_to 'Post', new_post_path, class: "dropdown-item", data: { "turbo_stream": true } %>
           </li>
           <li>

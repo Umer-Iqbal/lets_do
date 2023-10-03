@@ -286,3 +286,19 @@ $form-primary-color: #1DA1F2;
   cursor: pointer;
 }
 
+
+.post-form-wrapper {
+  .Polaris-Modal-Dialog__Modal {
+    background-color: red !important;
+    padding: 10px !important;
+    border-radius: 5px;
+  }
+  .Polaris-Modal-Section {
+    padding: unset;
+  }
+
+  .Polaris-Modal-Header--titleHidden {
+    display: none;
+  }
+}
+
