@@ -1,0 +1,9 @@
+<%= turbo_stream.remove "spinner" %>
+
+<%= turbo_stream.append "all_posts" do %>
+  <%= render partial: "shares/post", collection: @posts %>
+
+  <% if @pagy.next.nil? %>
+    <span class="d-none" data-pagination-target="noRecords"></span>
+  <% end %>
+<% end %>

@@ -29,15 +29,13 @@
 
     </div>
   </div>
-  <div class="user-posts">
-    <h3 class="user-posts-title">Recent Posts</h3>
-    <% @posts.each do |post| %>
-      <div class="user-post w-unset h-unset border rounded-3">
-        <% post.images.each do |image| %>
-          <%= image_tag  image, class: "user-post-image" %>
-        <% end %>
-        <p class="p-3"><%= post.body %></p>
-      </div>
-    <% end %>
+
+  <div id="user_posts"
+       data-controller="pagination"
+       data-pagination-target="posts"
+       data-pagination-url-value="<%= user_url %> "
+       data-pagination-page-value="<%= 2 %>">
+
+    <%= render partial: "shares/post", collection: @posts %>
   </div>
 </div>

@@ -3,11 +3,14 @@
   <%#= render @posts %>
 <!--</ul>-->
 
-
-
 <%= turbo_stream_from :posts_list %>
-<div id='all_posts'>
-  <%= render @posts %>
+<div id='all_posts'
+     data-controller="pagination"
+     data-pagination-target="posts"
+     data-pagination-url-value="<%= root_url %> "
+     data-pagination-page-value="<%= 2 %>">
+
+  <%= render partial: "shares/post", collection: @posts %>
 </div>
 
 

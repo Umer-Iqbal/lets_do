@@ -69,3 +69,8 @@ gem 'view_component'
 
 
 gem "polaris_view_components", "~> 0.13.6"
+
+gem 'importmap-rails'
+gem 'requestjs-rails'
+
+gem 'pagy', '~> 6.1'
