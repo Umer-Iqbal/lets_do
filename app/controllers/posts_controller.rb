@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order("created_at DESC")
+    @pagy, @posts = pagy(@posts, items: 10)
     # respond_to do |format|
     #   format.html # Render the index.html.erb template
     #   format.turbo_stream # Render the Turbo Streams template

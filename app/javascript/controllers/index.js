@@ -24,3 +24,6 @@ application.register("show", ShowController)
 
 import { registerPolarisControllers } from "polaris-view-components"
 registerPolarisControllers(Stimulus)
+
+import PaginationController from "./pagination_controller"
+application.register("pagination", PaginationController)

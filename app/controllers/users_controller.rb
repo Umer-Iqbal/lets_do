@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts.all
+    @pagy, @posts = pagy(@posts, items: 10)
   end
 
   def new
