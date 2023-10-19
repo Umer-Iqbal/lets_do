@@ -1,0 +1,15 @@
+<div class="search-resource-container" data-controller="search-resource-component" data-search-resource-component-search-url-value="<%= @url %>">
+  <span class="search-field-container">
+    <span class="text-search-btn" data-action="click->search-resource-component#sendRequest">
+      <%= image_tag("icons/search.svg") %>
+    </span>
+    <span class="text-field">
+      <input data-action="keyup->search-resource-component#sendRequest" data-search-resource-component-target="searchField">
+    </span>
+    <span class="text-remove-btn" data-action="click->search-resource-component#removeText">x</span>
+  </span>
+
+  <span class="resource-list close-dropdown" id="resource_list_in_component">
+    <%= render "shares/search_user", items: nil%>
+  </span>
+</div>

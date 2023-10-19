@@ -6,7 +6,6 @@
 
 
 .post {
-  width: 50%;
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   border-radius: 10px;
@@ -17,15 +16,42 @@
     max-height: 400px;
     overflow: hidden;
   }
+
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-bottom: 1px solid lightgray;
+
+    .post-header-left-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .post-user-img-wrapper {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+
+        img{
+          width: 100%;
+          border-radius: 50%;
+          padding: 2px;
+        }
+      }
+
+      a{
+        margin-left: 8px;
+      }
+    }
+
+  }
 }
 
 
-.post-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
+
 
 .post-user-avatar{
   width: 50px;
@@ -288,7 +314,7 @@ $form-primary-color: #1DA1F2;
 
 .post-form-wrapper {
   .Polaris-Modal-Dialog__Modal {
-    background-color: red !important;
+    //background-color: red !important;
     padding: 10px !important;
     border-radius: 5px;
   }

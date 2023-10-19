@@ -8,8 +8,21 @@ export default class extends GlobalController {
     return ["close"]
   }
 
+  connect() {
+    document.addEventListener('click', this.closeAllDropDowns)
+  }
+
   closeCreate() {
     this.closePostWrapper()
+  }
+
+  closeAllDropDowns(){
+    Array.from(document.getElementsByClassName('close-dropdown')).forEach(function (dropdown){
+      if(dropdown.firstElementChild != null){
+        dropdown.firstElementChild.remove()
+      }
+    })
+
   }
 
 }

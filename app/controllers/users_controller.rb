@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :profile_images_edit]
-
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :profile_images_edit, :notifications]
+  # skip_before_action :set_user, only: [:add_friend,]
   def index
     @users = User.all
   end
 
   def show
+    @method_name = "users_show"
     @posts = @user.posts.all
     @pagy, @posts = pagy(@posts, items: 10)
   end
@@ -42,6 +43,28 @@ class UsersController < ApplicationController
 
   def profile_images_edit
     render turbo_stream: turbo_stream.append('middleModal', partial: 'users/profile_images_form', locals: { user: @user })
+  end
+
+  def search_user
+    if(params[:query].present?)
+      users = User.all.where("username LIKE ?", "%#{params[:query]}%")
+      render turbo_stream: turbo_stream.update('resource_list_in_component', partial: 'shares/search_user', locals: {items: users })
+    else
+      render turbo_stream: turbo_stream.update('resource_list_in_component', partial: 'shares/search_user', locals: {items: nil })
+    end
+  end
+
+  def add_friend
+    friend = User.find(params[:friend_user_id])
+    if friend.present?
+    else
+
+    end
+  end
+
+  def notifications
+    friendships = Friendship.where(status: "pending", friend_id: @user.id)
+    render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { items: friendships.present? ? friendships : nil})
   end
 
   private

@@ -1,0 +1,24 @@
+<% if items.present? %>
+  <%= polaris_card(sectioned: false) do %>
+    <%= polaris_resource_list do %>
+      <% items.each do |item| %>
+        <%= polaris_resource_item(url: user_path(item)) do |c| %>
+          <% c.with_media do %>
+            <% if item.avatar.attached? %>
+              <%= polaris_avatar(source: item.avatar, name: item.username) %>
+            <% else %>
+              <%= polaris_avatar(customer: true, name: item.username) %>
+            <% end %>
+          <% end %>
+          <% c.with_shortcut_actions do |shortcut_action| %>
+            <% shortcut_action.with_button(url: friendships_path(friend_id: item.id), content: "Add Friend",data: { turbo_method: "post" }) %>
+          <% end %>
+          <h3>
+            <%= polaris_text_style(variation: :strong) { item.username } %>
+          </h3>
+          <div><%= item.email %></div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -16,10 +16,7 @@
   background: #ffa590;
 }
 
-.header-wrapper {
-  position: sticky;
-  top: 0;
-}
+
 
 .w-unset {
   width: unset !important;
@@ -73,4 +70,13 @@ a {
   position: sticky;
   top: 0;
   background-color: white;
+}
+
+.header-wrapper{
+  position: fixed;
+  width: 100%;
+}
+
+#all_posts{
+  padding-top: 70px;
 }
