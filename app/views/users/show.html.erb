@@ -9,9 +9,9 @@
 
       <div class="wallpaper-user-image-wrapper">
         <div>
-           <span class="profile-user-image-wrapper">
-              <%= image_tag @user.avatar.attached? ? @user.avatar : "avatarplaceholder.jpg", class: "user-avatar" %>
-           </span>
+          <%= polaris_avatar(customer: true, name: current_user.username, size: :large, shape: "round", source: current_user.avatar.attached? ? current_user.avatar : "avatarplaceholder.jpg") %>
+
+
 
           <div class="user-header-info">
             <div class="user-username">

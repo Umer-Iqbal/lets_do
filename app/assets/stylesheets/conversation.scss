@@ -1,0 +1,15 @@
+.conversation-main-container{
+  height: calc(100vh - 56px);
+  padding-top: 56px;
+  height: 100%;
+
+  .section-wrapper{
+    display: flex;
+    height: 100%;
+
+    .section {
+      height: 100%;
+      border-left: 1px solid blue;
+    }
+  }
+}

@@ -5,6 +5,16 @@
   padding: 8px 15px;
   background-color: #36393f;
 
+  .header-btn-container{
+    a{
+      color: white;
+    }
+
+    .active-header-btn{
+      border-bottom: 2px solid blue;
+    }
+  }
+
   .header-left {
     display: flex;
     align-items: center;
