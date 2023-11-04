@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   def new
     @post = current_user.posts.build
+    render turbo_stream: turbo_stream.update('middleModal', partial: 'posts/form', locals: {post: @post})
   end
 
   def create
