@@ -14,6 +14,15 @@ Rails.application.routes.draw do
   resources :users do
     member do
       post :profile_images_edit
+      get :search_user
+      get :notifications
     end
+    collection do
+      get :add_friend
+    end
+  end
+
+  resource :friendships do
+
   end
 end

@@ -1,5 +1,5 @@
 <div class="user-container">
-  <div class="user-posts">
+  <div class="user-posts col-12 col-sm-10 col-md-8 col-xl-7 col-xxl-6">
     <div class="wallpaper-wrapper">
       <div class="wall-paper overflow-hidden">
         <%= image_tag current_user.wallpaper.attached? ? current_user.wallpaper : "daku.jpg", class: "user-post-image w-100" %>
@@ -37,5 +37,8 @@
        data-pagination-page-value="<%= 2 %>">
 
     <%= render partial: "shares/post", collection: @posts %>
+    <% if @pagy.next.nil? %>
+      <span class="d-none" data-pagination-target="noRecords"></span>
+    <% end %>
   </div>
 </div>

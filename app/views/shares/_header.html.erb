@@ -1,33 +1,46 @@
 <header class="header-container top-header">
   <div class="header-left">
-
+    <%= link_to root_path do %>
       <%= image_tag 'logo1.png', alt: "Logo", class: "header-logo" %>
-
+    <% end %>
   </div>
   <% if user_signed_in? %>
+    <div class="middle-container-wrapper">
+        <%= render SearchResource::SearchResourceComponent.new(url: search_user_user_path(current_user)) %>
+    </div>
+
     <nav class="header-right">
-      <a href="#" class="m-4"><%= image_tag "icons/notification.png" %></a>
-      <div class="btn-group">
-        <span class="user-name"><%= current_user.username.present? ? current_user.username.capitalize : "user" %></span>
+      <span class="notification-bell-wrapper">
+        <%= link_to notifications_user_path(current_user), "data-turbo-stream": true do %>
+          <%= image_tag "icons/notification.png" %>
+        <% end %>
+        <span class="close-dropdown" id="user_notification"></span>
+      </span>
+
+      <ul class="btn-group align-items-center mb-0">
+        <span class="user-name d-none d-sm-inline-block"><%= current_user.username.present? ? current_user.username.capitalize : "user" %></span>
         <span class="user-image" data-bs-toggle="dropdown" aria-expanded="false">
           <%= image_tag current_user.avatar.attached? ? current_user.avatar : "avatarplaceholder.jpg", class: "w-100" %>
         </span>
+        <%#= render "shares/header_user_dropdown" %>
 
-        <ul class="dropdown-menu">
-          <li>
-            <%= link_to 'Home', root_path, class: "dropdown-item" %>
-          </li>
-          <li>
-            <%= link_to 'Profile', user_path(current_user), class: "dropdown-item" %>
-          </li>
-          <li>
-<!--            <%#= polaris_link(url: new_post_path, data: { controller: "polaris", target: "#demo-modal", action: "polaris#openModal", "turbo_stream": true }) do %> Post <%# end %>-->
 
-            <%= link_to 'Post', new_post_path, class: "dropdown-item", data: { "turbo_stream": true } %>
-          </li>
-          <li>
-            <%= link_to 'Log Out', destroy_user_session_path, data: { "turbo-method": :delete, "turbo_stream": false }, class: 'dropdown-item' %>
-          </li>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to 'Home', root_path, class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= link_to 'Profile', user_path(current_user), class: "dropdown-item" %>
+            </li>
+            <li>
+<!--              <%#= polaris_link(url: new_post_path, data: { controller: "polaris", target: "#demo-modal", action: "polaris#openModal", "turbo_stream": true }) do %> Post <%# end %>-->
+
+              <%= link_to 'Post', new_post_path, class: "dropdown-item", data: { "turbo_stream": true } %>
+            </li>
+            <li>
+              <%= link_to 'Log Out', destroy_user_session_path, data: { "turbo-method": :delete, "turbo_stream": false }, class: 'dropdown-item' %>
+            </li>
+          </ul>
         </ul>
       </div>
     </nav>
