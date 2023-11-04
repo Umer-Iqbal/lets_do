@@ -5,6 +5,12 @@
     <% end %>
   </div>
   <% if user_signed_in? %>
+    <div class="header-btn-container">
+      <%= link_to "Conversation", conversations_path, class: 'text-light p-2 border'%>
+    </div>
+
+
+
     <div class="middle-container-wrapper">
         <%= render SearchResource::SearchResourceComponent.new(url: search_user_user_path(current_user)) %>
     </div>

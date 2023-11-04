@@ -12,4 +12,7 @@ class User < ApplicationRecord
   has_many :blocked_users, through: :blocks
 
   validates :email, presence: true, uniqueness: true
+
+  has_many :conversation, as: :conversationable
+  has_many :messages, through: :conversation
 end
