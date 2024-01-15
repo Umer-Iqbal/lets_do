@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_25_175308) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_04_163820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -61,14 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_175308) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "conversationables", force: :cascade do |t|
-    t.string "commentable_type", null: false
-    t.bigint "commentable_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["commentable_type", "commentable_id"], name: "index_conversationables_on_commentable"
-  end
-
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "friend_id"
@@ -78,9 +80,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_175308) do
   end
 
   create_table "messages", force: :cascade do |t|
+    t.bigint "sender_id", null: false
+    t.bigint "recipient_id", null: false
     t.text "body"
+    t.boolean "read_status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_messages_on_recipient_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -116,4 +123,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_175308) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blocks", "users"
   add_foreign_key "blocks", "users", column: "blocked_user_id"
+  add_foreign_key "messages", "users", column: "recipient_id"
+  add_foreign_key "messages", "users", column: "sender_id"
 end

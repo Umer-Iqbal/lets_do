@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   end
 
   resources :messages
-  resources :conversations, only: [:index]
+  resources :conversations, only: [:index] do
+    get :load_conversation, on: :collection
+  end
 end

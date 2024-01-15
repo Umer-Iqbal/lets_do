@@ -13,6 +13,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
 
-  has_many :conversation, as: :conversationable
-  has_many :messages, through: :conversation
+  has_many :sent_messages, foreign_key: :sender_id, class_name: 'Message'
+  has_many :received_messages, foreign_key: :recipient_id, class_name: 'Message'
 end

@@ -16,6 +16,9 @@ application.register("global", GlobalController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import HomeController from "./home_controller"
+application.register("home", HomeController)
+
 import MainController from "./main_controller"
 application.register("main", MainController)
 

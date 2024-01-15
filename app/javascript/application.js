@@ -5,3 +5,5 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 import "@rails/request.js"
 
+import "trix"
+import "@rails/actiontext"

@@ -10,9 +10,6 @@
       <div class="wallpaper-user-image-wrapper">
         <div>
           <%= polaris_avatar(customer: true, name: current_user.username, size: :large, shape: "round", source: current_user.avatar.attached? ? current_user.avatar : "avatarplaceholder.jpg") %>
-
-
-
           <div class="user-header-info">
             <div class="user-username">
               <%= @user.username.present? ? @user.username : "User" %>

@@ -5,36 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4e02228-8d08-482b-822a-15e1c1acc024" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/javascript/controllers/show_controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/posts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/conversation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/conversation.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/user.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/user.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/posts_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/posts_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/global_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/global_controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/conversations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/conversations_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/messages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/messages_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/javascript/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/application.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/main_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/main_controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/show_create_controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/comment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/comment.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/post.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/post.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/conversation.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/message.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/message.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/shared/_links.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/shared/_links.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/conversations/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/conversations/index.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/messages/_message.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/messages/_message.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/posts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/new.turbo_stream.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/new.turbo_stream.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/shares/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shares/_header.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/users/_profile_images_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_profile_images_form.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/development.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/development.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20230129123429_create_users.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20230129123429_create_users.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20231025174241_create_conversationables.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20231025175308_create_messages.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20231025175308_create_messages.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +46,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="featcher/user_profile" />
-                    <option name="lastUsedInstant" value="1675362065" />
+                    <option name="branchName" value="feature/conversation-between-users" />
+                    <option name="lastUsedInstant" value="1699079688" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1675362064" />
+                    <option name="lastUsedInstant" value="1699079019" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/make-friend" />
+                    <option name="lastUsedInstant" value="1697738204" />
                   </RecentBranch>
                 </list>
               </option>
@@ -72,30 +69,36 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2L06Hzpsd913qnvrW5h04yFsuTd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Ruby.ViewRefParam.DefaultExtension": "turbo_stream.erb",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/brainx/work/umer_repos/mix_tg/app/assets/stylesheets",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ruby.rails.projectView.checked": "true",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Ruby.ViewRefParam.DefaultExtension&quot;: &quot;html.erb&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/conversation-between-users&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/brainx/work/Medium/mediumDemoProject&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/shares" />
+      <recent name="$PROJECT_DIR$/app/assets/stylesheets/base" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
       <recent name="$PROJECT_DIR$/app/assets/images/icons" />
       <recent name="$PROJECT_DIR$/app/assets/images" />
@@ -134,6 +137,7 @@
     </configuration>
     <configuration name="spec: mix_tg" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="mix_tg" />
+      <predefined_log_file enabled="true" id="RUBY_RAKE" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -157,6 +161,7 @@
     </configuration>
     <configuration name="test: mix_tg" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="mix_tg" />
+      <predefined_log_file enabled="true" id="RUBY_RAKE" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
@@ -197,6 +202,39 @@
       <workItem from="1675091398504" duration="7662000" />
       <workItem from="1675352218140" duration="13574000" />
       <workItem from="1675433548888" duration="49285000" />
+      <workItem from="1689866251979" duration="599000" />
+      <workItem from="1689876355056" duration="8000" />
+      <workItem from="1689877106080" duration="12000" />
+      <workItem from="1694951581986" duration="4480000" />
+      <workItem from="1696242536281" duration="6522000" />
+      <workItem from="1696338642914" duration="11128000" />
+      <workItem from="1696520387126" duration="12887000" />
+      <workItem from="1696570327690" duration="541000" />
+      <workItem from="1696694974256" duration="9339000" />
+      <workItem from="1696865137770" duration="5735000" />
+      <workItem from="1697044737294" duration="11987000" />
+      <workItem from="1697090173695" duration="295000" />
+      <workItem from="1697093173137" duration="1548000" />
+      <workItem from="1697095123593" duration="113000" />
+      <workItem from="1697095482742" duration="230000" />
+      <workItem from="1697125542093" duration="6220000" />
+      <workItem from="1697441211811" duration="653000" />
+      <workItem from="1697608914861" duration="614000" />
+      <workItem from="1697631810839" duration="1202000" />
+      <workItem from="1697728114560" duration="9865000" />
+      <workItem from="1697777858838" duration="66000" />
+      <workItem from="1697974384765" duration="2072000" />
+      <workItem from="1698056380076" duration="20000" />
+      <workItem from="1698240879105" duration="111000" />
+      <workItem from="1698253571504" duration="6678000" />
+      <workItem from="1699032592462" duration="31404000" />
+      <workItem from="1700056258461" duration="603000" />
+      <workItem from="1700195658143" duration="1662000" />
+      <workItem from="1700465020088" duration="688000" />
+      <workItem from="1700470132874" duration="21000" />
+      <workItem from="1700499384322" duration="64000" />
+      <workItem from="1700500741977" duration="363000" />
+      <workItem from="1701150475305" duration="421000" />
     </task>
     <servers />
   </component>

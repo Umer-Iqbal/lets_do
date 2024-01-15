@@ -1,0 +1,16 @@
+<div class="cm-container">
+  <div class="cm-messages" id="cmMessages">
+    <% messages.each do |message| %>
+      <%= render partial: "messages/message", locals: {message: message} %>
+    <% end %>
+  </div>
+  <div class="cm-editor-wrapper">
+    <%= form_with model: Message.new, url: messages_path do |f| %>
+      <%#= f.text_area :body, placeholder: "Write message", class: "comment-area" %>
+      <%= f.hidden_field :recipient_id, value: recipient_id %>
+      <%= f.hidden_field :sender_id, value: current_user.id %>
+      <%= f.rich_text_area :body %>
+      <%= polaris_button(size: :slim) {f.submit "send" }  %>
+    <% end %>
+  </div>
+</div>

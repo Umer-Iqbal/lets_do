@@ -3,14 +3,15 @@
     <%= link_to root_path do %>
       <%= image_tag 'logo1.png', alt: "Logo", class: "header-logo" %>
     <% end %>
+
+    <% if user_signed_in? %>
+      <div class="header-btn-container ml-10">
+        <%= link_to "Home", root_path, id: 'homeBtn' %>
+        <%= link_to "Conversation", conversations_path, id:"conversationBtn", class: 'ml-10'%>
+      </div>
+    <% end %>
   </div>
   <% if user_signed_in? %>
-    <div class="header-btn-container">
-      <%= link_to "Conversation", conversations_path, id:"conversationBtn"%>
-    </div>
-
-
-
     <div class="middle-container-wrapper">
         <%= render SearchResource::SearchResourceComponent.new(url: search_user_user_path(current_user)) %>
     </div>

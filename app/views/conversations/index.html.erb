@@ -1,11 +1,27 @@
 <div class="conversation-main-container" data-controller="conversation">
   <div class="section-wrapper">
-    <div class="col-1 section">
+    <div class="w-4-per section d-none d-md-block">
 
 
     </div>
-    <div class="col-2 section"></div>
-    <div class="col-5 section"></div>
-    <div class="col-4 section"></div>
+    <div class="col-2 section conversation-channels">
+
+      <div>
+        <% @friends.each do |friend| %>
+          <%= link_to load_conversation_conversations_path(recipient_id: friend), data: {"turbo_stream": true} do %>
+            <div class="user-box">
+              <%= polaris_avatar(size: :small, shape: :square, source: friend.avatar.attached? ? friend.avatar : "avatarplaceholder.jpg" ) %>
+              <span class="ml-10 d-none d-md-block">
+                <%= polaris_text_style(variation: :strong) { friend.username } %>
+              </span>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-10 col-md-9 col-lg-8 section conversation-messages" id="conversation_wrapper">
+      <%= render partial: "conversations/conversation_messages", locals: {messages: @messages, recipient_id: @recipient_id} %>
+    </div>
+    <div class=" section"></div>
   </div>
 </div>

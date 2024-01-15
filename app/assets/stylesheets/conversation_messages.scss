@@ -1,0 +1,17 @@
+.cm-container {
+  width: 100%;
+  height: 100%;
+  background: white;
+
+  .cm-messages{
+    height: calc(100vh - 192px);
+    overflow-y: auto;
+    padding: 15px;
+  }
+
+  .cm-editor-wrapper {
+    height: 136px;
+    overflow-y: auto;
+    padding: 0 15px;
+  }
+}

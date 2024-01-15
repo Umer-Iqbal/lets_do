@@ -1,27 +1,22 @@
-
-
-
-  <%= polaris_modal(
-        data: {
-          controller: "show-polaris-modal"
-        },
-        id: "profile-images-update",
-        title: "Update Profile Images",
-        open: true,
-        ) do |modal| %>
-    <%= polaris_text_container do %>
-      <%= form_with model: user do |form| %>
+<%= polaris_modal(
+      data: {
+        controller: "show-polaris-modal"
+      },
+      id: "profile-images-update",
+      title: "Update Profile Images",
+      open: true,
+    ) do |modal| %>
+  <%= polaris_text_container do %>
+    <%= form_with model: user do |form| %>
       <div class="d-flex flex-column">
 
-          <span>Upload Profile Pick</span>
-          <%= form.file_field :avatar %>
-          <span>Upload Wallpaper Pick</span>
-          <%= form.file_field :wallpaper %>
+        <span>Upload Profile Pick</span>
+        <%= form.file_field :avatar %>
+        <span>Upload Wallpaper Pick</span>
+        <%= form.file_field :wallpaper %>
         <%= form.submit "Update" %>
 
       </div>
     <% end %>
-    <%# modal.with_primary_action { "Update" } %>
-
-    <% end %>
   <% end %>
+<% end %>

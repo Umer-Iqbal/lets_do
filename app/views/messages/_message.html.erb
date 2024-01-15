@@ -1,7 +1,6 @@
-<div id="<%= dom_id message %>">
-  <p>
-    <strong>Body:</strong>
+<div id="<%= dom_id message %>" class="d-flex align-items-center my-3">
+  <%= polaris_avatar( size: :medium, shape: "round", source: message.sender.avatar.attached? ? message.sender.avatar : "avatarplaceholder.jpg") %>
+  <div class="ml-10">
     <%= message.body %>
-  </p>
-
+  </div>
 </div>
