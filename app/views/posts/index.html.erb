@@ -1,6 +1,6 @@
 <%#= render Post::PostComponent.new(posts: @posts)%>
 <!--<ul id="posts_list" data-turbo-stream-target="posts_list">-->
-  <%#= render @posts %>
+<%#= render @posts %>
 <!--</ul>-->
 
 <%= turbo_stream_from :posts_list %>
@@ -12,5 +12,3 @@
 
   <%= render partial: "shares/post", collection: @posts %>
 </div>
-
-

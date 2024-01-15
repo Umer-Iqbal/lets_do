@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ConversationController from "./conversation_controller"
+application.register("conversation", ConversationController)
+
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
@@ -27,3 +30,6 @@ application.register("search-resource-component", SearchResourceComponentControl
 
 import ShowController from "./show_controller"
 application.register("show", ShowController)
+
+import ShowPolarisModalController from "./show_polaris_modal_controller"
+application.register("show-polaris-modal", ShowPolarisModalController)

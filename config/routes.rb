@@ -25,4 +25,7 @@ Rails.application.routes.draw do
   resource :friendships do
 
   end
+
+  resources :messages
+  resources :conversations, only: [:index]
 end

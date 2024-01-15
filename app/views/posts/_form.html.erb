@@ -1,7 +1,8 @@
 <%= form_with(model: post, local: true,) do |form| %>
   <div class="post-form-wrapper" data-controller="post">
     <%= polaris_modal(
-          id: "demo-modal",
+          id: "post-form-modal",
+          "data-post-target": "postFormModal",
           title: false,
           open: true,
           ) do |modal| %>
@@ -34,10 +35,10 @@
             upload
           </button>
           <span>
-          <button type="button" class="post-form-submit text-bg-info bg-light border" data-action="polaris-modal#close">
+          <button type="button" class="post-form-submit text-bg-info bg-light border" data-action="click->post#hidePostFormModal">
             Cancel
           </button>
-            <%= form.submit "Post", class: "post-form-submit", "data-action": "polaris-modal#close" %>
+            <%= form.submit "Post", class: "post-form-submit", "data-action": "click->post#hidePostFormModal" %>
         </span>
         </div>
       <% end %>
