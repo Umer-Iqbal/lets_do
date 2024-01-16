@@ -74,3 +74,4 @@ gem 'importmap-rails'
 gem 'requestjs-rails'
 
 gem 'pagy', '~> 6.1'
+gem "noticed", "~> 1.6"

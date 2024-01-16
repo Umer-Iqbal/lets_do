@@ -1,4 +1,5 @@
 class FriendshipsController < ApplicationController
+  before_action :set_friend, only: :create
 
   def create
     friend_request = Friendship.new(user_id: current_user.id, friend_id: params[:friend_id], status: 'pending')
@@ -19,5 +20,14 @@ class FriendshipsController < ApplicationController
       end
     end
     render turbo_stream: turbo_stream.update('flashMessage', partial: 'shares/flash_message')
+  end
+
+  private
+  def set_friend
+    @friend_ship = current_user.friendships.find_by(friend_id: params[:friend_id])
+    if @friend_ship.present?
+      flash.now[:notice] = "Friend request already sent"
+      render turbo_stream: turbo_stream.update('flashMessage', partial: 'shares/flash_message')
+    end
   end
 end
