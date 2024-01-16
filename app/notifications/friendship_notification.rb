@@ -1,9 +1,9 @@
 # To deliver this notification:
 #
-# PostNotification.with(post: @post).deliver_later(current_user)
-# PostNotification.with(post: @post).deliver(current_user)
+# FriendshipNotification.with(post: @post).deliver_later(current_user)
+# FriendshipNotification.with(post: @post).deliver(current_user)
 
-class PostNotification < Noticed::Base
+class FriendshipNotification < Noticed::Base
   # Add your delivery methods
   #
   deliver_by :database, format: :to_database
@@ -24,8 +24,8 @@ class PostNotification < Noticed::Base
 
   # Define helper methods to make rendering easier.
   #
-  # def post
-  #   t(".post")
+  # def message
+  #   t(".message")
   # end
   #
   # def url

@@ -16,17 +16,13 @@ class Post < ApplicationRecord
     # after_update_commit {broadcast_replace_later_to :posts_list, target: self, partial: 'shares/post', locals: { post: self } }
     after_destroy_commit {broadcast_remove_to :posts_list, target: self }  #dont add later init
 
-
-
-    belongs_to :recipient, class_name: "User"
-
     after_create_commit :notify_recipient
-
-    has_noticed_notifications
 
     private
 
     def notify_recipient
-        PostNotification.with(post: self).deliver_later(self.user)
+        self.user.friends.where(friendships: { status: :accepted }).each do |friend|
+            PostNotification.with(item: self).deliver_later(friend)
+        end
     end
 end

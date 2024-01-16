@@ -28,13 +28,13 @@ class PostsController < ApplicationController
         format.turbo_stream do
           render turbo_stream: [
             turbo_stream.prepend('all_posts', partial: 'shares/post', locals: { post: @post }),
-            turbo_stream.update('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' })
+            turbo_stream.update('flashMessage', partial: 'shares/flash_message', locals: { message: 'Post created successfully' })
 
           ]
         end
       end
     else
-      render :new, flash.now[:notice] = "Message n sent"
+      turbo_stream.update('flashMessage', partial: 'shares/flash_message', locals: { message: 'Post not created successfully' })
     end
   end
 

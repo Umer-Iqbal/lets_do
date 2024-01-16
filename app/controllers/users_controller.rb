@@ -63,8 +63,11 @@ class UsersController < ApplicationController
   end
 
   def notifications
-    friendships = Friendship.where(status: "pending", friend_id: @user.id)
-    render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { items: friendships.present? ? friendships : nil})
+    # friendships = Friendship.where(status: "pending", friend_id: @user.id)
+    # render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { items: friendships.present? ? friendships : nil})
+
+    notifications = current_user.notifications.order(created_at: :desc)
+    render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { notifications: notifications})
   end
 
   private

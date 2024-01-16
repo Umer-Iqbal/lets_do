@@ -1,8 +1,10 @@
-<% if items.present? %>
+<% if notifications.present? %>
   <span class="notification-drop-down-wrapper">
     <%= polaris_card(sectioned: false) do %>
       <%= polaris_resource_list do %>
-        <% items.each do |item| %>
+        <% notifications.each do |notification| %>
+          <% item = notification.params[:item]%>
+
           <% user =  item.user %>
 
           <%= polaris_resource_item(url: user_path(user)) do |c| %>
@@ -13,14 +15,20 @@
                 <%= polaris_avatar(customer: true, name: user.username) %>
               <% end %>
             <% end %>
-            <% c.with_shortcut_actions do |shortcut_action| %>
-              <% shortcut_action.with_button(url: friendships_path(sender_id: item.user.id, add_friend: true, request_id: item.id), content: "Accept",data: { turbo_method: "put" }) %>
-              <% shortcut_action.with_button(url: friendships_path(sender_id: item.user.id, add_friend: false, request_id: item.id), content: "Reject",data: { turbo_method: "put" }) %>
+            <% if notification.type ==  "FriendshipNotification" %>
+              <% c.with_shortcut_actions do |shortcut_action| %>
+                <% shortcut_action.with_button(url: friendships_path(sender_id: item.user.id, add_friend: true, request_id: item.id), content: "Accept", data: { turbo_method: "put" }) %>
+                <% shortcut_action.with_button(url: friendships_path(sender_id: item.user.id, add_friend: false, request_id: item.id), content: "Reject", data: { turbo_method: "put" }) %>
+              <% end %>
             <% end %>
             <h3>
               <%= polaris_text_style(variation: :strong) { user.username } %>
             </h3>
-            <div><%= "Send You Friend Request" if item.status == "pending" %></div>
+            <% if notification.type ==  "FriendshipNotification" %>
+              <div><%= "Send You Friend Request" if item.status == "pending" %></div>
+             <% elsif notification.type ==  "PostNotification" %>
+              <div><%= "Shared a new post"%></div>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
