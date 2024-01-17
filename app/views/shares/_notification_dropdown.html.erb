@@ -6,7 +6,7 @@
           <% item = notification.params[:item]%>
 
           <% user =  item.user %>
-
+          <div class="notification-wrapper <%= 'unread-notifications' if notification.read_at.blank?%>">
           <%= polaris_resource_item(url: user_path(user)) do |c| %>
             <% c.with_media do %>
               <% if user.avatar.attached? %>
@@ -30,6 +30,7 @@
               <div><%= "Shared a new post"%></div>
             <% end %>
           <% end %>
+            </div>
         <% end %>
       <% end %>
     <% end %>

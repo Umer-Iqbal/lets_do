@@ -66,9 +66,12 @@ class UsersController < ApplicationController
     # friendships = Friendship.where(status: "pending", friend_id: @user.id)
     # render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { items: friendships.present? ? friendships : nil})
 
-    notifications = current_user.notifications.order(created_at: :desc)
-    render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { notifications: notifications})
+    @notifications = current_user.notifications.order(created_at: :desc).to_a
+    current_user.notifications.where(read_at: nil).update_all(read_at: Time.zone.now)
+    render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { notifications: @notifications})
   end
+
+
 
   private
 
@@ -78,6 +81,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :avatar, :wallpaper)
+  end
+
+  def read_notifications
+    @notifications.update_all(read_at: Time.zone.now)
   end
 
 end

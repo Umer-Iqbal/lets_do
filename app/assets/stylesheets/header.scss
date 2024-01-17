@@ -88,6 +88,14 @@
         border: 1px solid lightgray;
         padding: 3px;
         border-radius: 10px;
+
+        .notification-wrapper{
+          border-bottom: 1px solid lightgray;
+        }
+
+        .unread-notifications{
+          background: lightgray;
+        }
       }
     }
   }
