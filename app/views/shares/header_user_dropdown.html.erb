@@ -1,0 +1,28 @@
+<ul class="dropdown-menu">
+  <%= polaris_navigation do |navigation| %>
+    <% navigation.with_item(
+         url: root_path,
+         label: "Home",
+         icon: "HomeMinor",
+         selected: @method_name == "posts_index"
+       ) %>
+    <% navigation.with_item(
+         url: user_path(current_user),
+         label: "Profile",
+         icon: "OrdersMinor",
+         # badge: "15"
+         selected: @method_name == "users_show"
+       ) %>
+    <% navigation.with_item(
+         url: new_post_path, data: { controller: "polaris", target: "#demo-modal", action: "polaris#openModal", "turbo_stream": true },
+         label: "Post",
+         icon: "ProductsMinor"
+       ) %>
+    <% navigation.with_item(
+         url: destroy_user_session_path,
+         data: { "turbo-method": :delete, "turbo_stream": false },
+         label: "Log Out",
+         icon: "ProductsMinor"
+       ) %>
+  <% end %>
+</ul>

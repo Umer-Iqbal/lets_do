@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
+    @method_name = "posts_index"
     @posts = Post.all.order("created_at DESC")
     @pagy, @posts = pagy(@posts, items: 10)
     # respond_to do |format|
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.prepend('all_posts', partial: 'posts/post', locals: { post: @post }),
+            turbo_stream.prepend('all_posts', partial: 'shares/post', locals: { post: @post }),
             turbo_stream.update('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' })
 
           ]
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
       respond_to do |format|
         format.turbo_stream {
           render turbo_stream: [turbo_stream.replace('flashMessage', partial: 'shares/flash_message', locals: { message: 'Resource created successfully' }),
-                                                    turbo_stream.replace("post_#{@post.id}", partial: 'posts/post', locals: { post: @post })] }
+                                                    turbo_stream.replace("post_#{@post.id}", partial: 'shares/post', locals: { post: @post })] }
       end
     else
       render :edit

@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 75px;
 
   .mt--50 {
     margin-top: -50px;
@@ -62,7 +63,6 @@
 }
 
   .user-posts {
-    width: 50%;
 
     .wallpaper-wrapper {
       .wall-paper {

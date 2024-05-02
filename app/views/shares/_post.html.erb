@@ -1,9 +1,11 @@
 <div class="posts-container" id="post_<%= post.id %>">
-  <div class="post">
+  <div class="post col-12 col-sm-10 col-md-8 col-xl-7 col-xxl-6">
     <div class="post-header">
-        <span>
-          <%= image_tag post.user.avatar.attached? ? post.user.avatar : "avatarplaceholder.jpg", class: "post-user-avatar" %>
-          <%= link_to post.user.username.present? ? post.user.username : "User", post.user %>
+        <span class="post-header-left-content">
+          <span class="post-user-img-wrapper">
+            <%= image_tag post.user.avatar.attached? ? post.user.avatar : "avatarplaceholder.jpg" %>
+          </span>
+            <%= link_to post.user.username.present? ? post.user.username : "User", post.user %>
         </span>
 
       <span>

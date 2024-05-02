@@ -16,14 +16,14 @@ application.register("hello", HelloController)
 import MainController from "./main_controller"
 application.register("main", MainController)
 
+import PaginationController from "./pagination_controller"
+application.register("pagination", PaginationController)
+
 import PostController from "./post_controller"
 application.register("post", PostController)
 
+import SearchResourceComponentController from "./search_resource_component_controller"
+application.register("search-resource-component", SearchResourceComponentController)
+
 import ShowController from "./show_controller"
 application.register("show", ShowController)
-
-import { registerPolarisControllers } from "polaris-view-components"
-registerPolarisControllers(Stimulus)
-
-import PaginationController from "./pagination_controller"
-application.register("pagination", PaginationController)
