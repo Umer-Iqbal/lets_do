@@ -67,7 +67,8 @@ class UsersController < ApplicationController
     # render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { items: friendships.present? ? friendships : nil})
 
     @notifications = current_user.notifications.order(created_at: :desc).to_a
-    current_user.notifications.where(read_at: nil).update_all(read_at: Time.zone.now)
+    # current_user.notifications.where(read_at: nil).update_all(read_at: Time.zone.now)
+    current_user.notifications.update_all(read_at: Time.zone.now)
     render turbo_stream: turbo_stream.update("user_notification", partial: "shares/notification_dropdown", locals: { notifications: @notifications})
   end
 

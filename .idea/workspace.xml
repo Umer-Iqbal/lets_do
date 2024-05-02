@@ -5,29 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4e02228-8d08-482b-822a-15e1c1acc024" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/mix_tg.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mix_tg.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.bootstrap.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/conversation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/conversation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/conversations_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/conversations_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/messages_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/messages_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/application.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/javascript/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/javascript/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/conversation.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/message.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/message.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/conversations/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/conversations/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/messages/_message.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/messages/_message.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/shares/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/shares/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_profile_images_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/_profile_images_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20231025174241_create_conversationables.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20231025175308_create_messages.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20231025175308_create_messages.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/dump.rdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +19,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -235,6 +217,15 @@
       <workItem from="1700499384322" duration="64000" />
       <workItem from="1700500741977" duration="363000" />
       <workItem from="1701150475305" duration="421000" />
+      <workItem from="1705309932562" duration="26856000" />
+      <workItem from="1706504276357" duration="4321000" />
+      <workItem from="1706602236861" duration="187000" />
+      <workItem from="1706612834553" duration="599000" />
+      <workItem from="1707220618420" duration="989000" />
+      <workItem from="1707669596536" duration="1066000" />
+      <workItem from="1708664444307" duration="2300000" />
+      <workItem from="1708686167838" duration="2524000" />
+      <workItem from="1709010826709" duration="30000" />
     </task>
     <servers />
   </component>
